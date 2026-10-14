@@ -4,13 +4,6 @@ using System.Windows.Forms;
 
 namespace MunicipalServicesApp.Controls
 {
-    /// <summary>
-    /// A Button with rounded corners and an optional two-colour gradient
-    /// fill. Used throughout the app's purple theme to give buttons a
-    /// friendlier, more modern look than the default square WinForms button.
-    /// Set <see cref="UseGradient"/> to false for a flat "outline" style
-    /// button (e.g. secondary actions).
-    /// </summary>
     public class RoundedButton : Button
     {
         public int CornerRadius { get; set; } = 14;
@@ -52,9 +45,6 @@ namespace MunicipalServicesApp.Controls
 
             var rect = new Rectangle(0, 0, Width - 1, Height - 1);
 
-            // Paint the parent's background behind the button first so the
-            // corners "outside" the rounded rectangle look transparent
-            // instead of showing square white corners.
             using (var backBrush = new SolidBrush(Parent != null ? Parent.BackColor : Color.White))
             {
                 g.FillRectangle(backBrush, ClientRectangle);

@@ -4,10 +4,6 @@ using MunicipalServicesApp.Forms;
 
 namespace MunicipalServicesApp
 {
-    /// <summary>
-    /// Application entry point. Starts the app on the Main Menu form, as
-    /// required by the "Report Issues" implementation spec (Task 2).
-    /// </summary>
     internal static class Program
     {
         [STAThread]

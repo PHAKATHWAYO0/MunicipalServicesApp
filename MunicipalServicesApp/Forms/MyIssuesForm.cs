@@ -5,15 +5,6 @@ using MunicipalServicesApp.Localization;
 
 namespace MunicipalServicesApp.Forms
 {
-    /// <summary>
-    /// Shows every issue reported during the current session, pulled
-    /// straight from the shared <see cref="IssueRepository"/>, along with a
-    /// simple derived status and how many citizens have supported each one
-    /// (see the duplicate-detection feature in <see cref="ReportIssuesForm"/>).
-    /// This gives citizens visibility into what they've reported instead of
-    /// submissions disappearing into a void, which research on citizen
-    /// reporting apps links to higher trust and repeat engagement.
-    /// </summary>
     public partial class MyIssuesForm : Form
     {
         public MyIssuesForm()

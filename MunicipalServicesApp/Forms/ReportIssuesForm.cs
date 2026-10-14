@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -9,14 +9,6 @@ using MunicipalServicesApp.Models;
 
 namespace MunicipalServicesApp.Forms
 {
-    /// <summary>
-    /// Lets a citizen report a municipal issue: location, category,
-    /// description and an optional attachment. Implements the "dynamic
-    /// engagement feature" requirement via a ProgressBar + label combo that
-    /// updates live as the user fills in the form (see Task 1 research:
-    /// gamified progress feedback). Also detects likely duplicate reports
-    /// and offers a shortcut to the "My Reported Issues" history screen.
-    /// </summary>
     public partial class ReportIssuesForm : Form
     {
         private string _attachedFilePath;
@@ -35,12 +27,6 @@ namespace MunicipalServicesApp.Forms
             UpdateEngagementFeedback();
         }
 
-        /// <summary>
-        /// Applies the current UI language (see Translator) to every
-        /// static piece of text on this form. Called once at startup —
-        /// this form is recreated each time it is opened, so it always
-        /// picks up whatever language was last selected on the Main Menu.
-        /// </summary>
         private void ApplyTranslations()
         {
             lblHeaderTitle.Text = Translator.T("reportHeaderTitle");
@@ -55,13 +41,6 @@ namespace MunicipalServicesApp.Forms
             btnBackToMain.Text = Translator.T("btnBackToMain");
         }
 
-        /// <summary>
-        /// Attempts to tint the ProgressBar purple to match the app theme.
-        /// Windows themes the ProgressBar natively, so this may have no
-        /// visible effect on every Windows version/theme combination — it
-        /// is a best-effort visual touch, not required functionality, so
-        /// any failure here is safely ignored.
-        /// </summary>
         private void TryTintProgressBarPurple()
         {
             try
@@ -71,7 +50,6 @@ namespace MunicipalServicesApp.Forms
             }
             catch
             {
-                // Purely cosmetic — ignore if unsupported on this OS/theme.
             }
         }
 
@@ -81,11 +59,6 @@ namespace MunicipalServicesApp.Forms
             cmbCategory.Items.AddRange(Translator.GetCategories());
         }
 
-        /// <summary>
-        /// Single handler wired to every input control (TextChanged /
-        /// SelectedIndexChanged) so the engagement feedback is recalculated
-        /// the moment the user changes anything on the form.
-        /// </summary>
         private void InputChanged(object sender, EventArgs e)
         {
             UpdateEngagementFeedback();
@@ -102,12 +75,6 @@ namespace MunicipalServicesApp.Forms
             UpdateEngagementFeedback();
         }
 
-        /// <summary>
-        /// Drives the gamified engagement strategy chosen in Task 1: the
-        /// ProgressBar fills up and the label's message becomes more
-        /// encouraging as the user completes each of the four form fields
-        /// (location, category, description, attachment).
-        /// </summary>
         private void UpdateEngagementFeedback()
         {
             int progress = 0;
@@ -131,12 +98,6 @@ namespace MunicipalServicesApp.Forms
             string category = cmbCategory.SelectedItem.ToString();
             string location = txtLocation.Text.Trim();
 
-            // Duplicate/similar-issue detection: before creating a brand
-            // new record, check whether someone has already reported what
-            // looks like the same problem in the same category and a
-            // matching location, and offer to add support to that report
-            // instead — this avoids the municipality receiving many
-            // separate tickets for one real-world issue.
             var similarIssues = IssueRepository.FindSimilarIssues(category, location);
             if (similarIssues.Count > 0)
             {
@@ -162,7 +123,6 @@ namespace MunicipalServicesApp.Forms
                     ResetForm();
                     return;
                 }
-                // If "No", fall through and submit as a brand new report.
             }
 
             var issue = new Issue

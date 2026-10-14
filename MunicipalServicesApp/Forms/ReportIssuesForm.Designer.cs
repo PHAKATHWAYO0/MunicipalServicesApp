@@ -1,4 +1,4 @@
-using MunicipalServicesApp.Controls;
+﻿using MunicipalServicesApp.Controls;
 
 namespace MunicipalServicesApp.Forms
 {
@@ -14,8 +14,6 @@ namespace MunicipalServicesApp.Forms
             }
             base.Dispose(disposing);
         }
-
-        #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
@@ -75,7 +73,7 @@ namespace MunicipalServicesApp.Forms
             this.lblHeaderSubtitle.Name = "lblHeaderSubtitle";
             this.lblHeaderSubtitle.Size = new System.Drawing.Size(500, 22);
             this.lblHeaderSubtitle.TabIndex = 1;
-            this.lblHeaderSubtitle.Text = "Tell us what\'s wrong \u2014 we\'ll take it from here.";
+            this.lblHeaderSubtitle.Text = "Tell us what\'s wrong — we\'ll take it from here.";
             //
             // lblHeaderTitle
             //
@@ -182,7 +180,7 @@ namespace MunicipalServicesApp.Forms
             this.lblEngagement.Name = "lblEngagement";
             this.lblEngagement.Size = new System.Drawing.Size(520, 22);
             this.lblEngagement.TabIndex = 9;
-            this.lblEngagement.Text = "Let\'s get started \u2014 fill in the details below.";
+            this.lblEngagement.Text = "Let\'s get started — fill in the details below.";
             //
             // progressBarEngagement
             //
@@ -216,7 +214,7 @@ namespace MunicipalServicesApp.Forms
             this.btnBackToMain.Name = "btnBackToMain";
             this.btnBackToMain.Size = new System.Drawing.Size(250, 45);
             this.btnBackToMain.TabIndex = 12;
-            this.btnBackToMain.Text = "\u2190 Back to Main Menu";
+            this.btnBackToMain.Text = "← Back to Main Menu";
             this.btnBackToMain.UseGradient = false;
             this.btnBackToMain.UseVisualStyleBackColor = true;
             this.btnBackToMain.Click += new System.EventHandler(this.btnBackToMain_Click);
@@ -257,8 +255,6 @@ namespace MunicipalServicesApp.Forms
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        #endregion
 
         private MunicipalServicesApp.Controls.BlobGradientPanel panelHeader;
         private System.Windows.Forms.Label lblHeaderTitle;

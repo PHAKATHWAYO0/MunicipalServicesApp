@@ -1,4 +1,4 @@
-using MunicipalServicesApp.Controls;
+﻿using MunicipalServicesApp.Controls;
 
 namespace MunicipalServicesApp.Forms
 {
@@ -14,8 +14,6 @@ namespace MunicipalServicesApp.Forms
             }
             base.Dispose(disposing);
         }
-
-        #region Windows Form Designer generated code
 
         private void InitializeComponent()
         {
@@ -126,8 +124,7 @@ namespace MunicipalServicesApp.Forms
             this.lblEmptyState.Name = "lblEmptyState";
             this.lblEmptyState.Size = new System.Drawing.Size(650, 80);
             this.lblEmptyState.TabIndex = 2;
-            this.lblEmptyState.Text = "You haven\'t reported any issues yet. Once you submit a report, it will appear h" +
-    "ere.";
+            this.lblEmptyState.Text = "You haven\'t reported any issues yet. Once you submit a report, it will appear here.";
             this.lblEmptyState.Visible = false;
             //
             // btnBackToMain
@@ -165,8 +162,6 @@ namespace MunicipalServicesApp.Forms
             this.panelHeader.PerformLayout();
             this.ResumeLayout(false);
         }
-
-        #endregion
 
         private MunicipalServicesApp.Controls.BlobGradientPanel panelHeader;
         private System.Windows.Forms.Label lblHeaderTitle;
